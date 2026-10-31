@@ -63,22 +63,45 @@
 // Console.WriteLine($"Площадь 2x2 больше площади 1x5: {CalculateRectangleArea(2, 2) > CalculateRectangleArea(1, 5)}");
 
 //Шаг 10. Add для разных типов и количества аргументов
-class Program {
-    static void Main(){
-        Console.WriteLine(Add(2, 3));
-        Console.WriteLine(Add(2.5, 3.5));
-        Console.WriteLine(Add(2, 3, 4));
-    } 
+// class Program {
+//     static void Main(){
+//         Console.WriteLine(Add(2, 3));
+//         Console.WriteLine(Add(2.5, 3.5));
+//         Console.WriteLine(Add(2, 3, 4));
+//     } 
 
-    static int Add(int a, int b){
-        return a + b;
-    } 
+//     static int Add(int a, int b){
+//         return a + b;
+//     } 
 
-    static double Add(double a, double b){
-        return a + b;
-    } 
+//     static double Add(double a, double b){
+//         return a + b;
+//     } 
 
-    static int Add(int a, int b, int c){
-        return a + b + c;
-    }
+//     static int Add(int a, int b, int c){
+//         return a + b + c;
+//     }
+// } 
+
+//Шаг 12. Метод внутри метода
+Console.WriteLine();
+Console.WriteLine("Методы вызывают методы");
+PrintNumberInfo(7);
+PrintNumberInfo(10);
+PrintNumberInfo(15);
+
+bool IsEven(int number){
+    return number % 2 == 0;
+} 
+
+void PrintNumberInfo(int number){
+    string parity = IsEven(number) ? "четное" : "нечетное";
+    Console.WriteLine($"{number} - {parity} число");
+} 
+
+//Шаг 13. Комбинируем с циклом из ПР5
+Console.WriteLine();
+Console.WriteLine("Методы + цикл");
+for (int i = 1; i <= 5; i++){
+    PrintNumberInfo(i);
 }
