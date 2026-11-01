@@ -84,24 +84,48 @@
 // } 
 
 //Шаг 12. Метод внутри метода
-Console.WriteLine();
-Console.WriteLine("Методы вызывают методы");
-PrintNumberInfo(7);
-PrintNumberInfo(10);
-PrintNumberInfo(15);
+// Console.WriteLine();
+// Console.WriteLine("Методы вызывают методы");
+// PrintNumberInfo(7);
+// PrintNumberInfo(10);
+// PrintNumberInfo(15);
 
-bool IsEven(int number){
-    return number % 2 == 0;
+// bool IsEven(int number){
+//     return number % 2 == 0;
+// } 
+
+// void PrintNumberInfo(int number){
+//     string parity = IsEven(number) ? "четное" : "нечетное";
+//     Console.WriteLine($"{number} - {parity} число");
+// } 
+
+// //Шаг 13. Комбинируем с циклом из ПР5
+// Console.WriteLine();
+// Console.WriteLine("Методы + цикл");
+// for (int i = 1; i <= 5; i++){
+//     PrintNumberInfo(i);
+// }
+
+//Самостоятельные задания
+//Задание 1. Конвертер единиц ★
+double m1 = 10;
+double m2 = 15;
+
+Console.WriteLine($"{m1} метров = {MetersToFeet(m1)} футов ");
+Console.WriteLine($"{m2} метров = {MetersToFeet(m2)} футов "); 
+
+Console.WriteLine();
+
+double c1 = 0;
+double c2 = 30;
+
+Console.WriteLine($"{c1} C = {CelsiusToFahrenheit(c1)} F ");
+Console.WriteLine($"{c2} C = {CelsiusToFahrenheit(c2)} F ");
+
+double MetersToFeet(double meters){
+    return meters * 3.28084;
 } 
 
-void PrintNumberInfo(int number){
-    string parity = IsEven(number) ? "четное" : "нечетное";
-    Console.WriteLine($"{number} - {parity} число");
-} 
-
-//Шаг 13. Комбинируем с циклом из ПР5
-Console.WriteLine();
-Console.WriteLine("Методы + цикл");
-for (int i = 1; i <= 5; i++){
-    PrintNumberInfo(i);
+double CelsiusToFahrenheit(double celsius){
+    return (celsius * 9/5) + 32;
 }
